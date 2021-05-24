@@ -1,0 +1,45 @@
+{
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "swagger": "2.0",
+  "info": {
+    "description": "To access source of records for subscriptions of the cloud products",
+    "title": "FAST API",
+    "version": "1.0.0"
+  },
+  "host": "localhost:8080",
+  "paths": {
+    "/api/v1/orgs": {
+      "get": {
+        "description": "Orgs details will be returned else Error Not Found (404) will be returned.",
+        "tags": [
+          "org"
+        ],
+        "summary": "Return all the org details.",
+        "operationId": "getOrgs",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/badReq"
+          },
+          "400": {
+            "$ref": "#/responses/badReq"
+          },
+          "404": {
+            "$ref": "#/responses/notFoundReq"
+          },
+          "500": {
+            "$ref": "#/responses/serverErrorReq"
+          }
+        }
+      }
+    }
+  }
+}
